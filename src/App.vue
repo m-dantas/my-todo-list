@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container grid-lg">
+      <header class="navbar">
+        <section class="navbar-section">
+          <router-link to="/" class="btn btn-link">Home</router-link>
+          <router-link to="/kanban" class="btn btn-link">Kanban</router-link>
+        </section>
+        <section class="navbar-center">
+          <img  class="img-responsive img-logo" src="@/assets/logo.png" alt="logo da vue">
+        </section>
+        <section class="navbar-section">
+          <a href="" class="btn btn-link">
+            Twitter
+          </a>
+          <a href="" class="btn btn-link">
+            Github
+          </a>
+        </section>
+      </header>
+
+      <router-view class="pt-2"/>
+    </div>    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.img-logo {
+  max-width: 70px;
 }
 </style>
