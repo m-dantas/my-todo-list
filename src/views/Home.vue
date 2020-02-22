@@ -7,8 +7,15 @@
             v-model="todo.description"
             class="form-input"
             placeholder="Novo todo"
+            data-cy="input-todo"
           >
-          <button class="btn btn-primary input-group-btn" :class="{loading}">Adicionar</button>
+          <button 
+            class="btn btn-primary input-group-btn" 
+            :class="{loading}"
+            data-cy="add-todo"
+          >
+            Adicionar
+          </button>
         </div>
           
       </form>
@@ -16,9 +23,10 @@
         <Todo 
           v-for="item in todos" 
           :key="item.id" 
-          :todo="item" 
+          :todo="item"
           @toggle="toggleTodo" 
           @remove="removeTodo"
+          data-cy="todo-component"
         />
       </div>
     </div>

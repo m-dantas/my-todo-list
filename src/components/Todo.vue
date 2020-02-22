@@ -10,12 +10,17 @@
       <div>
         <button 
           @click="$emit('toggle', todo)" 
-          class="btn btn-link"      
+          class="btn btn-link"
+          data-cy="concluir"
         >
           <span v-if="todo.checked">Desmarcar</span>
           <span v-else>Concluído</span>
         </button>
-        <button @click="$emit('remove', todo)" class="btn btn-link">
+        <button 
+          @click="$emit('remove', todo)" 
+          class="btn btn-link"
+          data-cy="remover"
+        >
           <span class="text-error">Remover</span>
         </button>
       </div>
